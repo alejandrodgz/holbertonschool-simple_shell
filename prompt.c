@@ -14,23 +14,15 @@ int main (void)
 {
 	char *prompt = "$";
 	char *line;
-	char *token;
-	char *sep = " ";
 	size_t n = 0;
-	ssize_t h, b;
+	ssize_t h;
 
 	while (1)
 	{
 		write(STDOUT_FILENO, prompt, 1);
 		h = getline(&line, &n, stdin);
-		token = strtok(line, sep);
-		while (token != NULL)
-		{
-			b = strlen(token);
-			write(STDOUT_FILENO, token, b);
-			write(STDOUT_FILENO, "\n", 2);
-			token = strtok(NULL, sep);
-		}
+		write(STDOUT_FILENO, line, n);
+		write(STDOUT_FILENO, "\n", 2);
 	}
 	return (0);
 }
