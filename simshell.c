@@ -21,14 +21,16 @@ int main(void)
 			write(STDOUT_FILENO, "$ ", 2);
 		line = line1();
 		list = strtok(line, SEP);
-		printf("%s\n", line);
 		child = fork();
 		if (child == -1)
 			return (0);
 		if(child == 0)
 		{
 			 if (execve(list, argv, NULL) == -1)
+			 {
 				 perror("Error:");
+				 return (0);
+			 }
 		}
 		else
 			wait(&n);
