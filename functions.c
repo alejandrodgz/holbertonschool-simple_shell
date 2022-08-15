@@ -23,9 +23,10 @@ char **getpath(char **pathlist)
 	int i = 0;
 	char *env;
 	char *tokenv;
+	char *copy;
 
 	env = getenv("PATH");
-	char *copy = strdup(env);
+	copy = strdup(env);
 	tokenv = strtok(copy, ":");
 	while (tokenv != NULL)
 	{
@@ -99,7 +100,7 @@ char *pathex(char **pathlist, char *command, char *fullpath)
 				  (strlen1(command)));
 		conca1(pathlist[i], command, fullpath);
 		printf("fullpath %s", fullpath);
-		if (s = stat(fullpath, &st) == 0)
+		if ((s = stat(fullpath, &st)) == 0)
 		{
 			printf("%d FOUND\n", s);
 			return(fullpath);
