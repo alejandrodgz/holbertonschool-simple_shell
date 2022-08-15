@@ -9,11 +9,10 @@
 int main(void)
 {
 	char *line;
-	char *arg;
 	int n;
 	pid_t child;
-	char *token;
 	char *list;
+	char *argv[];
 
 	while (1)
 	{
@@ -22,7 +21,7 @@ int main(void)
 			write(STDOUT_FILENO, "$ ", 2);
 		line = line1();
 		list = strtok(line, SEP);
-		char *argv[] = {NULL};
+		argv[] = {NULL};
 		printf("%s\n", line);
 		child = fork();
 		if (child == -1)
