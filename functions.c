@@ -86,6 +86,11 @@ char *line1(void)
 	{
 		free(line);
 	}
+	if (getline(&line, &n, stdin) == EOF)
+        {
+                puts("\n");
+                exit(127);
+        }
 	return(line);
 }
 
