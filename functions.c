@@ -85,11 +85,6 @@ char *line1(void)
 	if (h == -1)
 	{
 		free(line);
-	}
-	if (getline(&line, &n, stdin) == EOF)
-        {
-                puts("\n");
-                exit(127);
         }
 	return(line);
 }
