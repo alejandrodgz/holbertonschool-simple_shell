@@ -12,7 +12,7 @@ int main(void)
 	int n;
 	pid_t child;
 	char *list;
-	char *argv[];
+	char *argv[] = {NULL};
 
 	while (1)
 	{
@@ -21,7 +21,6 @@ int main(void)
 			write(STDOUT_FILENO, "$ ", 2);
 		line = line1();
 		list = strtok(line, SEP);
-		argv[] = {NULL};
 		printf("%s\n", line);
 		child = fork();
 		if (child == -1)
