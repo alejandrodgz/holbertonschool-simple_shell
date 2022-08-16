@@ -33,7 +33,7 @@ int _atoi(char *s)
 	}
 	if ((sig - 1) % 2 != 0)
 	{
-		num = num * 1;
+		num = num * -1;
 	}
 	return (num);
 }
