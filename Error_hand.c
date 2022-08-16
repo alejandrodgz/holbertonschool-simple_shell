@@ -61,7 +61,7 @@ void _print_error1(int err, char **argv)
 {
 	_putse(program_invocation_name);
 	_putse(": ");
-	_printd(err);
+	_printd1(err);
 	_putse(": ");
 	_putse(argv[0]);
 	_putse(": ");

@@ -27,7 +27,9 @@ typedef struct builts
 
 void _puts(char *s);
 int _putchar(const char c);
+int _putchar1(const char c);
 void _printd(int num);
+void _printd1(int num);
 char *_token_string(char *s, char *delimit);
 char *strchar(char *s, char b);
 unsigned int _strcspn(char *s, char *pre);
