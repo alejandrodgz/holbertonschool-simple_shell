@@ -21,7 +21,7 @@ int _atoi(char *s)
 		{
 			sig++;
 		}
-		if (s[arr] >= 48 && s[arr <= 57])
+		if (s[arr] >= 48 && s[arr] <= 57)
 		{
 			num = num * 10 - (s[arr] - '0');
 			outp = 1;
