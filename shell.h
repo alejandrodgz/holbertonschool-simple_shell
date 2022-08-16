@@ -55,5 +55,5 @@ int _print_enviro(char **argv);
 int _set_environ(char **argv);
 int _unset_environ(char **argv);
 void _putse(char *s);
-
+void _print_error1(int err, char **argv);
 #endif /*SHELL_H*/

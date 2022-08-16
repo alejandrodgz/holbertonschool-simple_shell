@@ -14,7 +14,7 @@ void Error_handler(int *status, int err, char **argv)
 	switch (*status)
 	{
 		case 127:
-			_print_error(err, argv);
+			_print_error1(err, argv);
 			_putse("not found");
 			_putse("\n");
 			break;
