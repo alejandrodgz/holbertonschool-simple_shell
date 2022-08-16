@@ -127,4 +127,3 @@ int _unset_environ(char **argv)
 	}
 	return (1);
 }
-
