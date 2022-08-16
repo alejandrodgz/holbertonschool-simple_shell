@@ -8,7 +8,7 @@
 
 int our_exit(char **argv)
 {
-	int status = 0, a;
+	int status = 2, a;
 
 	if (argv[1] == NULL)
 	{
