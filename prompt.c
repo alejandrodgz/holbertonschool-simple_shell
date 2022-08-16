@@ -34,7 +34,7 @@ int main(void)
 		_puts("$ ");
 		err_quot++;
 		buff = read_input();
-		argv = token_buffer(buff, "\t\r\n\a");
+		argv = token_buffer(buff, " \t\r\n\a");
 		status_command = shell_executable(argv, built_in_array);
 
 		Error_handler(&status_command, err_quot, argv);

@@ -21,7 +21,7 @@ char **token_buffer(char *buff, char *delimit)
 		exit(98);
 	}
 	string_token = _token_string(buff, delimit);
-	while (string_token != NULL)
+	while (string_token)
 	{
 		tokens[iterator] = string_token;
 		iterator++;

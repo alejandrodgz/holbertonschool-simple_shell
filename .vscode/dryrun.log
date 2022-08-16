@@ -1,8 +1,0 @@
-make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/jehp/Desktop/Holberton/holbertonschool-simple_shell'
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-#valgrind --leak-check=yes --show-leak-kinds=all ./hsh
-#gbd ./hsh
-./hsh
-make: Leaving directory '/home/jehp/Desktop/Holberton/holbertonschool-simple_shell'
- 
