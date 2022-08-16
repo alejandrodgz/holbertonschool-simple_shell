@@ -8,14 +8,14 @@
 
 int our_exit(char **argv)
 {
-	int status = 2, a;
+	int status = 0, a;
 
 	if (argv[1] == NULL)
 	{
 		free(argv[0]);
 		free(argv);
 		fflush(stdout);
-		exit(0);
+		exit(2);
 	}
 	for (a = 0; argv[1][a] != '\0'; a++)
 	{
