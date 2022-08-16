@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * shell_execute - executes the built in commands
+ * shell_executable - executes the built in commands
  * @argv: pointer to the argv
- * @built_in_arr: pointer to the struct with built in comm
+ * @built_arr: pointer to the struct with built in comm
  * Return: 1 on success
  **/
 
@@ -65,11 +65,9 @@ int shell_launch(char **argv)
 			exit(127);
 		}
 		if (execve(argv[0], argv, environ) == -1)
-		{
 			perror("Error");
-		}
 		_free(argv, path);
-		exit (2);
+		exit(2);
 	}
 	else if (pid < 0)
 		perror("hsh");
@@ -82,7 +80,6 @@ int shell_launch(char **argv)
  * _free - frees argv and path
  * @argv: buff containing the tokens
  * @path: path to look for exec files
- *
  * Return - Nothing
  */
 
@@ -103,6 +100,7 @@ void _free(char **argv, char **path)
 int checker_existence(char *path)
 {
 	int fd = access(path, F_OK | X_OK);
+
 	if (fd == -1)
 	{
 		return (-1);

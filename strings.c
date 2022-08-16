@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * _str_comparition - compares two strings
+ * _str_comparation - compares two strings
  * @s1: string one
  * @s2: string two
  * Return: 0 if match, anything else if they don't match
@@ -56,7 +56,7 @@ int _str_lenght(char *s)
 }
 
 /**
- * _strcat - concatenates two strings
+ * _string_cat - concatenates two strings
  * @str1: first string
  * @str2: second string to be concatenated
  * Return: pointer to the concatenated string
@@ -79,15 +79,15 @@ char *_string_cat(char *str1, char *str2)
 	}
 	for (it2 = 0; str2[it2] != '\0'; it2++)
 	{
-		cat_string[it +it2] = str2[it2];
+		cat_string[it + it2] = str2[it2];
 	}
 	cat_string[it + it2] = '\0';
 	return (cat_string);
 }
 
 /**
- * _strdup - gives a pointer to memory space
- * @str: string
+ * _string_dup - gives a pointer to memory space
+ * @string: string
  * Return: pointer
  */
 
@@ -95,7 +95,7 @@ char *_string_dup(char *string)
 {
 	char *s;
 	unsigned int size = 0, a;
-	
+
 	if (string == NULL)
 	{
 		return (NULL);

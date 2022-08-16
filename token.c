@@ -5,7 +5,12 @@
 #include <sys/wait.h>
 #include <string.h>
 #include "shell.h"
-
+/**
+ * token_buffer - make a list of tokens for shell arguments
+ * @buff: this is the line that we get from the stdin
+ * @delimit: for each argument
+ * Return: list
+ */
 
 
 char **token_buffer(char *buff, char *delimit)
@@ -13,7 +18,7 @@ char **token_buffer(char *buff, char *delimit)
 	int buffsize = 64, iterator = 0;
 	char **tokens = malloc(sizeof(char *) * buffsize);
 	char *string_token;
-	
+
 	if (tokens == NULL)
 	{
 		perror("Not possible to allocate memory");
@@ -32,7 +37,11 @@ char **token_buffer(char *buff, char *delimit)
 }
 
 
-
+/**
+ * Read_the_input - get the input from the terminal
+ * Return: a string with all the characters from de stdin
+ *
+ */
 
 char *Read_the_input()
 {
@@ -48,4 +57,3 @@ char *Read_the_input()
 	buff[_str_lenght(buff) - 1] = '\0';
 	return (buff);
 }
-	
