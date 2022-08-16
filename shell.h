@@ -1,14 +1,14 @@
 #ifndef SHELL_H
 #define SHELL_H
-
 extern char **environ;
 extern char *program_invocation_name;
-
+/*#define SEP ' \t\r\n\v\f'*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/wait.h>
 #include <signal.h>
+#include <string.h>
 /*Structs*/
 
 /**
