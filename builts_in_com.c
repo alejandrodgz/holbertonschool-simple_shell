@@ -15,7 +15,7 @@ int our_exit(char **argv)
 		free(argv[0]);
 		free(argv);
 		fflush(stdout);
-		exit(2);
+		exit(status);
 	}
 	for (a = 0; argv[1][a] != '\0'; a++)
 	{
