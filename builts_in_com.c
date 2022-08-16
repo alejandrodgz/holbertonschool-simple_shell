@@ -8,7 +8,7 @@
 
 int our_exit(char **argv)
 {
-	int status = 2, a;
+	int status = 0, a;
 
 	if (argv[1] == NULL)
 	{
@@ -27,7 +27,7 @@ int our_exit(char **argv)
 	status = _atoi(argv[1]);
 	free(argv[0]);
 	free(argv);
-	exit(0);
+	exit(status);
 }
 
 /**
