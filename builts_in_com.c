@@ -27,7 +27,7 @@ int our_exit(char **argv)
 	status = _atoi(argv[1]);
 	free(argv[0]);
 	free(argv);
-	exit(2);
+	exit(status);
 }
 
 /**
