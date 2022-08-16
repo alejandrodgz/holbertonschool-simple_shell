@@ -5,6 +5,7 @@
 
 /**
  * main - displayed again each time a command has been executed
+ * Return: Succesfull 0
  */
 
 int main(void)
