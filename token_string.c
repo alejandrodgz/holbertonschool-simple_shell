@@ -1,5 +1,13 @@
 #include "shell.h"
 
+/**
+ * _token_string - tokenizes a string
+ * @s: string to tokenize
+ * @delimit: delimitator for the tokens
+ *
+ * Return: pointer to each token
+ */
+
 char *_token_string(char *s, char *delimit)
 {
 	int a;
@@ -24,6 +32,13 @@ char *_token_string(char *s, char *delimit)
 	return (s);
 }
 
+/**
+ * strchar - locates a character in the string
+ * @s: string
+ * @b: Character
+ *
+ * Return: pointer to the first occurrence of the character
+ */
 
 char *strchar(char *s, char b)
 {
@@ -42,6 +57,13 @@ char *strchar(char *s, char b)
 	return (0);
 }
 
+/**
+ * _strcspn - gets the lenght of a prefix string
+ * @s: string
+ * @pre: prefix string
+ *
+ * Return: number of bytes in the initial seg of s
+ */
 
 unsigned int _strcspn(char *s, char *pre)
 {

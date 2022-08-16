@@ -31,7 +31,7 @@ char *_get_enviro(char *name)
 }
 
 /**
- * _printenv - prints the enviroment
+ * _print_enviro - prints the enviroment
  * @argv: pointer to the commands
  * Return: 1 on success
  */
@@ -50,19 +50,19 @@ int _print_enviro(char **argv)
 }
 
 /**
- * _setenv - sets a new enviromental variable
+ * _set_environ - sets a new enviromental variable
  * @argv: pointer to the input commands
  * Return: 1 on success
  */
 
-int _set_eviron(char **argv)
+int _set_environ(char **argv)
 {
 	int status = EXIT_SUCCESS, exist = 0, a = 0;
 	char *dup = 0, *token = 0, *valg = 0;
 
 	while (environ[a])
 	{
-		dup =_string_dup(environ[a]);
+		dup = _string_dup(environ[a]);
 		token = _token_string(dup, "=");
 		if (!_str_comparation(token, argv[1]))
 		{
@@ -84,7 +84,7 @@ int _set_eviron(char **argv)
 }
 
 /**
- * _unsetenv - unsets an enviromental var
+ * _unset_environ - unsets an enviromental var
  * @argv: pointer to the buffer with the command line
  * Return: 1 on success
  */
@@ -109,7 +109,7 @@ int _unset_environ(char **argv)
 	}
 	if (exist)
 	{
-		new_enviro = malloc(sizeof(char *) * (lenght -1));
+		new_enviro = malloc(sizeof(char *) * (lenght - 1));
 		for (a = 0; a < lenght; a++)
 		{
 			copy = _string_dup(environ[a]);
@@ -127,3 +127,4 @@ int _unset_environ(char **argv)
 	}
 	return (1);
 }
+
