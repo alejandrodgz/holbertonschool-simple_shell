@@ -40,7 +40,8 @@ int shell_launch(char **argv)
 	pid = fork();
 	if (pid == 0)
 	{
-		env = _get_enviro("PATH");
+		env = getenv("PATH");
+		/*env = _get_enviro("PATH");*/
 		if (env && env[0] == ':')
 			tmp_path = 1;
 		path = token_buffer(env, ":");
