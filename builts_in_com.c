@@ -8,14 +8,14 @@
 
 int our_exit(char **argv)
 {
-	int status = 2, a = 0;
+	int status = 0, a = 0;
 
 	if (argv[1] == NULL)
 	{
 		free(argv[0]);
 		free(argv);
 		fflush(stdout);
-		exit(0);
+		exit(status);
 	}
 	while (argv[1][a] != '\0')
 	{
@@ -28,7 +28,7 @@ int our_exit(char **argv)
 	status = _atoi(argv[1]);
 	free(argv[0]);
 	free(argv);
-	exit (status);
+	exit(status);
 }
 
 /**
