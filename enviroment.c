@@ -21,6 +21,7 @@ char *_get_enviro(char *name)
 			token = _token_string(NULL, delimit);
 			environ[a] = _str_copy(environ[a], dup);
 			free(dup);
+			free(environ);
 			return (token);
 		}
 		environ[a] = _str_copy(environ[a], dup);
