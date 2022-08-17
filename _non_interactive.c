@@ -2,6 +2,7 @@
 /**
  * _non_interactive - executes the shell in non-interactive mode
  * @arr: array of structures to handle built in commands
+ * @status: status of proccess
  *
  * Return: Nothing
  */

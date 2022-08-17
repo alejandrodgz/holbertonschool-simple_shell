@@ -38,3 +38,67 @@ int _atoi(char *s)
 	}
 	return (num);
 }
+
+
+/**
+ * _printd - print any number
+ * @num: number
+ *
+ * Return: Nothing
+ */
+
+void _printd(int num)
+{
+	unsigned int num_1;
+
+	if (num < 0)
+	{
+		_putchar('-');
+		num_1 = -num;
+	}
+	else
+		num_1 = num;
+	if (num_1 / 10)
+	{
+		_printd(num_1 / 10);
+	}
+	_putchar(num_1 % 10 + '0');
+}
+
+/**
+ * _putchar1 - writes the character c to stderror
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+
+int _putchar1(const char c)
+{
+	return (write(STDERR_FILENO, &c, 1));
+}
+
+/**
+ * _printd1 - print any number to the stderr
+ * @num: number
+ *
+ * Return: Nothing
+ */
+
+void _printd1(int num)
+{
+	unsigned int num_1;
+
+	if (num < 0)
+	{
+		_putchar('-');
+		num_1 = -num;
+	}
+	else
+		num_1 = num;
+	if (num_1 / 10)
+	{
+		_printd(num_1 / 10);
+	}
+	_putchar1(num_1 % 10 + '0');
+}

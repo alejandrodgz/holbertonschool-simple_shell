@@ -4,6 +4,7 @@
  * shell_executable - executes the built in commands
  * @argv: pointer to the argv
  * @built_arr: pointer to the struct with built in comm
+ * @status_command: status of proccess
  * Return: 1 on success
  **/
 
@@ -40,8 +41,7 @@ int shell_launch(char **argv)
 	pid = fork();
 	if (pid == 0)
 	{
-		env = getenv("PATH");
-		/*env = _get_enviro("PATH");*/
+		env = _get_enviro("PATH");
 		if (env && env[0] == ':')
 			tmp_path = 1;
 		path = token_buffer(env, ":");

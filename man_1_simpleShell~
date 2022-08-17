@@ -1,0 +1,47 @@
+.TH SIMPLE_SHELL 1 "17 august 2022" "1.0" "custom man page"
+.SH NAME
+.B hsh
+- command language interpreter
+.SH SYNOPSIS
+.B hsh
+.SH DESCRIPTION
+hsh is one version of a command language interpreter that executes commands read from the standard input, this version was made with academic porpouses. It's functionality is limited to few shell builtin functions
+
+.SS Invocation
+An
+.I interactive
+hsh can be invoked by typing ./hsh Meanwhile, a
+.I non-interactive
+hsh can also be invoked via a pipe (e.g. echo "/bin/ls" | ./hsh).
+.SS Execution
+After a command is typed in the input the function string_token will split into separate words , if it results in a simple command and an optional list of arguments, the following actions are taken.
+.sp
+If the command name contains no slashes, the shell attempts to locate it the built-in command first. If there is not existent built-in command, the prog	ram will searh for an existent shell command in all the directories belonging to the PATH. 
+.sp
+If the name is neither a shell function nor a built-in, and contains no slashes, the simple shell searches each element of the environmental variable PATH for a directory containing an executable file by that name. If the search is unsuccessful, the hsh prints an error message "Error: File or description not found."
+.SS Functions
+.sp
+echo
+.I [arguments]
+      prints to standard output the argument(s) given and prints a newline
+
+.sp
+pwd
+      prints working directories
+
+.sp
+env
+      prints environmental variables
+
+.sp
+exit
+      exits out of hsh and returns to user's original shell
+.sp
+setenv
+      creates non-existing or modifies existing environmental variable within shell session
+.sp
+unsetenv
+      removes existing environmental variable within shell session
+
+.SH AUTHORS
+Alejandro Garcia <5199@holbertonstudents.com> Juan Esteban Hernandez <@holbertonstudents.com>

@@ -34,6 +34,7 @@ char *_get_enviro(char *name)
 /**
  * _print_enviro - prints the enviroment
  * @argv: pointer to the commands
+ * @status_command: status of proccess
  * Return: 1 on success
  */
 
@@ -87,6 +88,7 @@ int _set_environ(char **argv)
 /**
  * _unset_environ - unsets an enviromental var
  * @argv: pointer to the buffer with the command line
+ * @status_command: status of proccess
  * Return: 1 on success
  */
 

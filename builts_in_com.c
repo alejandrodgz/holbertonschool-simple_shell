@@ -3,6 +3,7 @@
 /**
  * our_exit - checks whether the input is the exit command
  * @argv: buffer with the commands
+ * @status_command: status of proccess
  * Return: Exit status
  */
 
@@ -33,6 +34,7 @@ int our_exit(char **argv, int status_command)
 /**
  * _cd - fuction that cabges the current directory
  * @argv: atring containing the input
+ * @status_command: status of proccess
  * Return: 1 if works
  */
 
