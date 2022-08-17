@@ -8,26 +8,27 @@
 
 int our_exit(char **argv)
 {
-	int status = 0, a;
+	int status = 2, a = 0;
 
 	if (argv[1] == NULL)
 	{
 		free(argv[0]);
 		free(argv);
 		fflush(stdout);
-		exit(status);
+		exit(0);
 	}
-	for (a = 0; argv[1][a] != '\0'; a++)
+	while (argv[1][a] != '\0')
 	{
 		if (argv[1][a] < 48 || argv[1][a] > 57)
 		{
 			return (3);
 		}
+		a++;
 	}
 	status = _atoi(argv[1]);
 	free(argv[0]);
 	free(argv);
-	exit(status);
+	exit (status);
 }
 
 /**
