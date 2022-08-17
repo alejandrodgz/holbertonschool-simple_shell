@@ -14,7 +14,7 @@ int _atoi(char *s)
 	int arr;
 	int sig = 0;
 	int num = 0;
- 	int outp = 0;
+	int outp = 0;
 
 	for (arr = 0; s[arr] != '\0'; arr++)
 	{
