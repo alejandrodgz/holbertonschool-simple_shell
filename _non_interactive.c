@@ -5,11 +5,10 @@
  *
  * Return: Nothing
  */
-void _non_interactive(builts_in_t arr[])
+void _non_interactive(builts_in_t arr[], int status)
 {
 	char **argv;
 	char *buff = 0;
-	int status = EXIT_SUCCESS;
 	size_t size_buffer = 1024;
 	int err_quot = 0;
 
@@ -17,7 +16,7 @@ void _non_interactive(builts_in_t arr[])
 	{
 		err_quot++;
 		argv = token_buffer(buff, " \t\r\n\a");
-		status = shell_executable(argv, arr);
+		status = shell_executable(argv, arr, status);
 		Error_handler(&status, err_quot, argv);
 		free(argv);
 	}

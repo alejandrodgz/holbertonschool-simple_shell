@@ -36,7 +36,7 @@ char *_get_enviro(char *name)
  * Return: 1 on success
  */
 
-int _print_enviro(char **argv)
+int _print_enviro(char **argv, int status_command __attribute__((unused)))
 {
 	int a;
 	(void) argv;
@@ -89,7 +89,7 @@ int _set_environ(char **argv)
  * Return: 1 on success
  */
 
-int _unset_environ(char **argv)
+int _unset_environ(char **argv, int status_command __attribute__((unused)))
 {
 	int a = 0, exist = 0, lenght = 0, b = 0;
 	char *token, *copy;

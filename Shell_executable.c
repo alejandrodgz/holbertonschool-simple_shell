@@ -7,7 +7,7 @@
  * Return: 1 on success
  **/
 
-int shell_executable(char **argv, builts_in_t built_arr[])
+int shell_executable(char **argv, builts_in_t built_arr[], int status_command)
 {
 	int a = 0;
 
@@ -18,7 +18,7 @@ int shell_executable(char **argv, builts_in_t built_arr[])
 	{
 		if (_str_comparation(argv[0], built_arr[a].name_command) == 0)
 		{
-			return (built_arr[a].f(argv));
+			return (built_arr[a].f(argv, status_command));
 		}
 		a++;
 	}
