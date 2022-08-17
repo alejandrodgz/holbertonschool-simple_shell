@@ -6,16 +6,16 @@
  * Return: Exit status
  */
 
-int our_exit(char **argv)
+int our_exit(char **argv, int status_command)
 {
-	int status = 0, a = 0;
+	int a = 0;
 
 	if (argv[1] == NULL)
 	{
 		free(argv[0]);
 		free(argv);
 		fflush(stdout);
-		exit(status);
+		exit(status_command);
 	}
 	while (argv[1][a] != '\0')
 	{
@@ -25,10 +25,9 @@ int our_exit(char **argv)
 		}
 		a++;
 	}
-	status = _atoi(argv[1]);
 	free(argv[0]);
 	free(argv);
-	exit(status);
+	exit(status_command);
 }
 
 /**
@@ -37,7 +36,7 @@ int our_exit(char **argv)
  * Return: 1 if works
  */
 
-int _cd(char **argv)
+int _cd(char **argv, int status_command __attribute__((unused)))
 {
 	char buff[1024], *cwd, *new_pwd, *comp = "-", *old_pwd;
 	int chint = 0;

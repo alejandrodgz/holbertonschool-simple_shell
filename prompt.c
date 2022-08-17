@@ -25,7 +25,7 @@ int main(void)
 
 	if (isatty(STDIN_FILENO) != 1)
 	{
-		_non_interactive(built_in_array);
+		_non_interactive(built_in_array, status_command);
 	}
 
 	(void)signal(SIGINT, sign_handler);
@@ -36,7 +36,7 @@ int main(void)
 		err_quot++;
 		buff = read_input();
 		argv = token_buffer(buff, " \t\r\n\a");
-		status_command = shell_executable(argv, built_in_array);
+		status_command = shell_executable(argv, built_in_array, status_command);
 
 		Error_handler(&status_command, err_quot, argv);
 		free(argv);
