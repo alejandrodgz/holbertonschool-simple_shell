@@ -11,11 +11,9 @@
 int main(void)
 {
 	char *buff = NULL, **argv = NULL, **argv_non;
-	int flag = 1, err_quot = 0, err_count_non = 0;
-	int status_command = EXIT_SUCCESS;
+	int flag = 1, err_quot = 0, err_count_non = 0, status_command = EXIT_SUCCESS;
 	size_t size_buffer = 1024;
 
-/*Here are the function who are gonna have the commands of the shell*/
 	builts_in_t built_in_array[] = {
 		{"exit", our_exit},
 		{"env", _print_enviro},
@@ -23,7 +21,6 @@ int main(void)
 		{"cd", _cd},
 		{NULL, NULL}
 	};
-
 	if (isatty(STDIN_FILENO) != 1)
 	{
 		while (getline(&buff, &size_buffer, stdin) != EOF)
@@ -37,7 +34,6 @@ int main(void)
 		free(buff);
 		exit(status_command);
 	}
-
 	(void)signal(SIGINT, sign_handler);
 	(void) built_in_array;
 	while (flag)
