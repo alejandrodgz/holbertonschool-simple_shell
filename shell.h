@@ -36,7 +36,6 @@ unsigned int _strcspn(char *s, char *pre);
 char **token_buffer(char *buff, char *delimit);
 int _str_lenght(char *s);
 char *Read_the_input();
-void _non_interactive(builts_in_t arr[], int status);
 int _str_comparation(char *s1, char *s2);
 void _free(char **argv, char **path);
 int checker_existence(char *path);

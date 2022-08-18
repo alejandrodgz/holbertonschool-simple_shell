@@ -10,9 +10,10 @@
 
 int main(void)
 {
-	char *buff = NULL, **argv = NULL;
-	int flag = 1, err_quot = 0;
+	char *buff = NULL, **argv = NULL, **argv_non;
+	int flag = 1, err_quot = 0, err_count_non = 0;
 	int status_command = EXIT_SUCCESS;
+	size_t size_buffer = 1024;
 
 /*Here are the function who are gonna have the commands of the shell*/
 	builts_in_t built_in_array[] = {
@@ -25,7 +26,16 @@ int main(void)
 
 	if (isatty(STDIN_FILENO) != 1)
 	{
-		_non_interactive(built_in_array, status_command);
+		while (getline(&buff, &size_buffer, stdin) != EOF)
+		{
+			err_count_non++;
+			argv_non = token_buffer(buff, " \t\r\n\a");
+			status_command = shell_executable(argv_non, built_in_array, status_command);
+			Error_handler(&status_command, err_count_non, argv_non);
+			free(argv_non);
+		}
+		free(buff);
+		exit(status_command);
 	}
 
 	(void)signal(SIGINT, sign_handler);
