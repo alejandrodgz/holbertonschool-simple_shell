@@ -8,7 +8,6 @@
  * Return: the number f a sign of an array or
  * 0 if no a number
  */
-
 int _atoi(char *s)
 {
 	int arr;
