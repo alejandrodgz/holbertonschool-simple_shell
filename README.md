@@ -76,7 +76,7 @@ Another and last mode is the **non-interactive** and say that you can the **Simp
 _____________________________________________________________________________________
 # The Algorithm of prompt's proccess and executable's proccess
 
-![Algorithms](Downloads/SIMPLE_SHELL.png)
+![SIMPLE_SHELL](https://user-images.githubusercontent.com/97681995/185553005-66740495-40c3-4c01-aa03-c80e67d79be9.png)
 
 # Manual
 
